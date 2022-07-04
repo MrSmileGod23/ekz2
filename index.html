@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Форма</title>
+</head>
+
+<body>
+  <form action="" id="MyForm" name="form" onsubmit="return validate_form();">
+    <label for="name">Имя</label>
+    <input type="text" name="name" id="name">
+
+    <label for="email">Почта</label>
+    <input type="email" name="email" id="email">
+
+    <label for="gender">Пол</label>
+    <input type="checkbox" name="gender" class="checkbox-box">
+    <input type="checkbox" name="gender" class="checkbox-box2">
+
+    <label for="weapon">Оружие</label>
+    <input type="radio" name="weapon" class="radio-box">
+    <input type="radio" name="weapon" class="radio-box2">
+
+    <input type="submit" name="submit" value="Отправить">
+  </form>
+
+
+  <div id="result">
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+  </div>
+
+  <script async src="./main.js"></script>
+  <script async>
+    let parent = document.querySelector("#result");
+    let p = document.createElement("p");
+    p.innerHTML = 'Проверьте свои данные';
+    parent.prepend(p);
+    document.getElementById('MyForm').addEventListener('submit', function (e) {
+
+      e.preventDefault();
+      document.getElementById('result1').innerHTML = document.getElementById('name').value
+      document.getElementById('result2').innerHTML = document.getElementById('email').value
+
+    });
+  </script>
+
+</body>
+
+</html>
