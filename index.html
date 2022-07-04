@@ -12,7 +12,7 @@
 <body>
   <form action="" id="MyForm" name="form" onsubmit="return validate_form();">
     <label for="name">Имя</label>
-    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="name" pattern="[А-Яа-яЁё\s]+$">
 
     <label for="email">Почта</label>
     <input type="email" name="email" id="email">
